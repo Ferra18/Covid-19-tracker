@@ -3,7 +3,6 @@
 *(English version below)*
 
 ## Introduzione
----
 
 COVID-19 tracker è una semplice dashborad che mostra l'andamento del contagio da COVID-19 sul territorio nazionale italiano.
 
@@ -12,7 +11,7 @@ Utilizza i dati forniti dalla protezione civile disponibili a questo [link](http
 La dashboard è realizzata in React, e utilizza le librerie Chart.js e Material UI.
 
 ## Utilizzo
----
+
 * È possibile visualizzare il progetto completo e funzionante qui: [Dashboard](https://mattiaferrari.com/covid19-tracker)
 
 * In alternativa è possibile clonare il repository
@@ -25,7 +24,7 @@ La dashboard è realizzata in React, e utilizza le librerie Chart.js e Material 
 # COVID-19: Tracker for italian situation
 
 ## Introduction
----
+
 
 COVID-19 tracker is a simple dashboard showing the trend of the infection in Italy.
 
@@ -34,7 +33,7 @@ It uses data provided by Protezione Civile Italiana at this [link](https://githu
 The dashboard is built with React, Chart.js and Material UI.
 
 ## Usage
----
+
 * Is possible to see the final project here: [Dashboard](https://mattiaferrari.com/covid19-tracker)
 
 * Or clone the repository
