@@ -22,7 +22,7 @@
     border-bottom: 10px solid rgba(194, 194, 194, 0.5);   
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 960px) {
     .card {
       margin: 2% 0 !important;
     }
