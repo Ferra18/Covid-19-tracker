@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COVID-19: Monitoraggio della situazione italiana
 
-## Available Scripts
+*(English version below)*
 
-In the project directory, you can run:
+## Introduzione
+---
 
-### `npm start`
+COVID-19 tracker è una semplice dashborad che mostra l'andamento del contagio da COVID-19 sul territorio nazionale italiano.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Utilizza i dati forniti dalla protezione civile disponibili a questo [link](https://github.com/pcm-dpc/COVID-19) per mostrare in maniera rapida e visuale i dati di contagio (sia a livello nazionale che a livello regionale).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+La dashboard è realizzata in React, e utilizza le librerie Chart.js e Material UI.
 
-### `npm test`
+## Utilizzo
+---
+* È possibile visualizzare il progetto completo e funzionante qui: [Dashboard](https://mattiaferrari.com/covid19-tracker)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* In alternativa è possibile clonare il repository
+    ```
+    git clone https://github.com/Ferra18/Covid-19-tracker
+    ```
+    ed eseguire <pre>npm i && npm start</pre>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# COVID-19: Tracker for italian situation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Introduction
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+COVID-19 tracker is a simple dashboard showing the trend of the infection in Italy.
 
-### `npm run eject`
+It uses data provided by Protezione Civile Italiana at this [link](https://github.com/pcm-dpc/COVID-19) to show quickly and visually data about the infection, both for the country and both for the regions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The dashboard is built with React, Chart.js and Material UI.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
+---
+* Is possible to see the final project here: [Dashboard](https://mattiaferrari.com/covid19-tracker)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Or clone the repository
+    ```
+    git clone https://github.com/Ferra18/Covid-19-tracker
+    ```
+    ed run <pre>npm i && npm start</pre>
