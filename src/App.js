@@ -15,9 +15,10 @@ class App extends React.Component {
         },
         regioni: [],
         regioneSelezionata: 'Nazionale',
+        updatedAt: null
     }
 
-    async componentDidMount() {
+    async fetchData() {
         const fetchedNationalData = await fetchNationalData()
         const fetchedRegionalData = await fetchRegionalData()
         const regions = fetchedRegionalData.filter((item) => {return item.data === fetchedRegionalData[0].data}).map((region) => region.denominazione_regione)
@@ -37,20 +38,30 @@ class App extends React.Component {
             })
         }
 
-        this.setState({ andamento: data, regioni: regions})
+        this.setState({ andamento: data, regioni: regions, updatedAt: Date.parse(fetchedNationalData[fetchedNationalData.length -1].data) })
+    }
+
+    async componentDidMount() {
+        await this.fetchData()
     }
 
     handleSelectedRegionChange = async (region) => {
+        const now = new Date()
+        const diff = now - this.state.updatedAt
+        console.log(diff)
+        if (diff >= 86400000) {
+            await this.fetchData()
+        }
         this.setState({ regioneSelezionata: region })
     }
     
     render() {
-        const { andamento, regioneSelezionata, regioni } = this.state
+        const { andamento, regioneSelezionata, regioni, updatedAt } = this.state
         return (
             <div className={styles.container}>
                 <img className={styles.image} src={titleImage} alt='COVID-19'/>
+                <RegionPicker regions={regioni} lastUpdate={updatedAt} handleSelectedRegionChange={this.handleSelectedRegionChange}/>
                 <Cards latest={andamento[regioneSelezionata].length > 0 ? andamento[regioneSelezionata].slice(-1)[0] : {}} />
-                <RegionPicker regions={regioni} handleSelectedRegionChange={this.handleSelectedRegionChange}/>
                 <Chart andamento={andamento[regioneSelezionata]}/>
             </div>
         )
