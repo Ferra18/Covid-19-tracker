@@ -37,7 +37,7 @@ class App extends React.Component {
                 }
             })
         }
-
+        console.log(data[this.state.regioneSelezionata][(data[this.state.regioneSelezionata]).length -1].data)
         this.setState({ andamento: data, regioni: regions, updatedAt: Date.parse(fetchedNationalData[fetchedNationalData.length -1].data) })
     }
 
@@ -49,10 +49,11 @@ class App extends React.Component {
         const now = new Date()
         const diff = now - this.state.updatedAt
         console.log(diff)
-        if (diff >= 86400000) {
+        this.setState({ regioneSelezionata: region })
+        if (diff >= 86400000) {     // Automatically fetch new data if data are old than one day when changing the selected region
             await this.fetchData()
         }
-        this.setState({ regioneSelezionata: region })
+        
     }
     
     render() {
