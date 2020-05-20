@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Cards, Chart, RegionPicker } from './components'
+import { Cards, Chart, Map, RegionPicker } from './components'
 import styles from './App.module.css'
 import { fetchNationalData, fetchRegionalData } from './api'
 import { groupBy } from './utils'
@@ -37,7 +37,7 @@ class App extends React.Component {
                 }
             })
         }
-        console.log(data[this.state.regioneSelezionata][(data[this.state.regioneSelezionata]).length -1].data)
+
         this.setState({ andamento: data, regioni: regions, updatedAt: Date.parse(fetchedNationalData[fetchedNationalData.length -1].data) })
     }
 
@@ -64,6 +64,7 @@ class App extends React.Component {
                 <RegionPicker regions={regioni} lastUpdate={updatedAt} handleSelectedRegionChange={this.handleSelectedRegionChange}/>
                 <Cards latest={andamento[regioneSelezionata].length > 0 ? andamento[regioneSelezionata].slice(-1)[0] : {}} />
                 <Chart andamento={andamento[regioneSelezionata]}/>
+                <Map></Map>
             </div>
         )
     }
