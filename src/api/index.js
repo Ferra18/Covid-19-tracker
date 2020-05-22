@@ -19,3 +19,12 @@ export const fetchRegionalData = async () => {
         console.log(error)
     }
 }
+
+export const fetchProvincialData = async () => {
+    try {
+        const { data } = await axios.get(`${url}/dpc-covid19-ita-province-latest.json`)
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}

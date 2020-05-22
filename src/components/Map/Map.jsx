@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { scaleLinear } from 'd3-scale'
 
 import styles from './Map.module.css'
 
-const Map = () => {
+const Map = ({ selectedRegion: regioneSelezionata, latest: trendForMap }) => {
 
-    //const mapUrl = '/public/regions.topojson'
-    //const path = '/Users/ferra/Developer/Projects/Covid-19-tracker/src/maps/regions.topojson'
-    const url = 'https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions.topojson'
+    const [trend, setTrend] = useState(trendForMap)
+
+    useEffect(() => {
+        if (trendForMap) {
+            setTrend(trendForMap)
+        }
+    }, [trendForMap])
+
+    const mapUrl = require('../../maps/'+ regioneSelezionata.toLowerCase() +'.topojson')
     
     const width = 1200
     const height = 1200
 
+    const colorScale = scaleLinear()
+        .domain([0.29, 0.68])
+        .range(["#ffedea", "#ff5233"]);
+
     const geoMap = (
         <ComposableMap projectionConfig={{ scale: 6000, center: [12.56738, 41.8719406] }} width={width} height={height} style={{ width: "100%", height: "auto" }}>
-                <Geographies geography={url}>
+                <Geographies geography={mapUrl}>
                     {( {geographies} ) => 
                     geographies.map((geography, i) => {
-                        console.log(geography)
+                        //console.log(geography)
                         return (
                             <Geography 
                                 key = {i} 
